@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHOST PILOT — Voice AI OS Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a8 8 0 0 0-8 8v12l4-2 4 2 4-2 4 2V10a8 8 0 0 0-8-8z"></path>
+            <circle cx="9" cy="10" r="1.5" fill="currentColor"></circle>
+            <circle cx="15" cy="10" r="1.5" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>GHOST PILOT</h1>
+          <span class="badge">LOCAL OS AGENT</span>
+        </div>
+      </div>
+      <div class="status-pill disconnected" id="connectionStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Terminal Console -->
+    <main class="terminal-card">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-title">ghost-pilot@local:~$ execution-log</div>
+        <button class="clear-btn" id="clearLogsBtn" title="Clear Terminal Logs">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          Clear
+        </button>
+      </div>
+
+      <div class="terminal-body" id="logTerminal">
+        <div class="log-entry system">
+          <span class="timestamp">[SYS]</span>
+          <span class="tag tag-sys">SYSTEM</span>
+          Ghost Pilot ready. Press the microphone button or type a command below.
+        </div>
+      </div>
+    </main>
+
+    <!-- Controls & Voice Input -->
+    <footer class="controls-card">
+      <!-- Voice Mic Section -->
+      <div class="mic-container">
+        <button class="mic-button" id="micBtn" title="Click to Speak">
+          <div class="pulse-ring"></div>
+          <svg class="mic-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+          </svg>
+        </button>
+        <div class="mic-status" id="micStatus">Click microphone to speak</div>
+      </div>
+
+      <!-- Text Input Fallback -->
+      <form class="text-input-form" id="textForm">
+        <input 
+          type="text" 
+          id="textInput" 
+          placeholder="Type a command (e.g. 'Open Notes and write Hello World')..." 
+          autocomplete="off"
+        />
+        <button type="submit" id="sendBtn">
+          <span>Send</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
