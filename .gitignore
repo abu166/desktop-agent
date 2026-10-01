@@ -1,0 +1,79 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.pfx
+*.crt
+*.cer
+*.secret
+*.p12
+*.dmp
+credentials.json
+secrets.json
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# OS & System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# Build, Node & Distribution Artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+node_modules/
+
+# Testing & Coverage Caches
+.cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Log Files & Databases
+*.log
+logs/
+*.db
+*.sqlite
+*.sqlite3
+
